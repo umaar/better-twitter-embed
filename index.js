@@ -1,16 +1,16 @@
 require('dotenv').config();
 
+const fs = require('fs');
 const request = require('request');
 const moment = require('moment');
 const Twitter = require('twitter');
-const fs = require('fs');
 const forEach = require('async-foreach').forEach;
 const tweetToHTML = require('tweet-to-html');
 
 const client = new Twitter({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  bearer_token: process.env.TWITTER_BEARER_TOKEN
+	consumer_key: process.env.TWITTER_CONSUMER_KEY,
+	consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+	bearer_token: process.env.TWITTER_BEARER_TOKEN
 });
 
 async function doTwitterAPICall(ids) {
@@ -63,7 +63,7 @@ function renderTweet({
 		</span>
 	</a>
 </li>
-`
+`;
 }
 
 function createMarkupForTweets(tweets) {
@@ -88,32 +88,30 @@ function createMarkupForTweets(tweets) {
 	});
 
 	return markups;
-
 }
 
 async function downloadAllTweetImages(tweets) {
-	return new Promise(function(resolve, reject) {
-		forEach(tweets, function(tweet, index, arr) {
-			var asyncForEachDone = this.async();
+	return new Promise(((resolve, reject) => {
+		forEach(tweets, function (tweet, index, arr) {
+			const asyncForEachDone = this.async();
 			const imageUrl = tweet.user.profile_image_url_https;
 			const filePath = './images/' + tweet.user.id + '.jpg';
 
-			request(imageUrl, {encoding: 'binary'}, function(error, response, body) {
+			request(imageUrl, {encoding: 'binary'}, (error, response, body) => {
 				if (error) {
 					console.log('\n\nThere was an error downloading an image: \n', error);
 					return asyncForEachDone();
 				}
 
-				fs.writeFile(filePath, body, 'binary', function (err) {
+				fs.writeFile(filePath, body, 'binary', err => {
 					if (err) {
 						console.log('There was an error writing the file\n\n', err);
 					}
 					asyncForEachDone();
 				});
 			});
-
-		}, resolve)
-	});
+		}, resolve);
+	}));
 }
 
 function sleep(ms = 1000) {
@@ -124,11 +122,11 @@ function orderTweets(tweets) {
 	return tweets.sort((a, b) => b.retweet_count - a.retweet_count);
 }
 
-const allIds = require('./ids.json').ids;
-// const allIds = require('./ids.json').ids.slice(0, 5);
+// const allIds = require('./ids.json').ids;
+const allIds = require('./ids.json').ids.slice(0, 5);
 
 function unique(arr) {
-	return Array.from(new Set(arr));
+	return [...new Set(arr)];
 }
 
 async function init() {
@@ -146,7 +144,6 @@ async function init() {
 		end = start + max;
 		await sleep(50);
 	}
-
 
 	const orderedTweets = orderTweets(tweets);
 	await downloadAllTweetImages(orderedTweets);

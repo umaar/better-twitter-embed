@@ -2,11 +2,19 @@
 
 How I get tweets onto https://umaar.com/dev-tips/feedback
 
-#### Add your IDs to ids.json
+#### Create a `.env` file like this:
 
 ```
+TWITTER_CONSUMER_KEY=
+TWITTER_CONSUMER_SECRET=
+TWITTER_BEARER_TOKEN=
+```
+
+#### Add your IDs to ids.json
+
+```sh
 mkdir images
-node index.js > tmp.txt
+npm start
 ```
 
 #### Sprite Generation
