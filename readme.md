@@ -4,13 +4,22 @@ How I get tweets onto https://umaar.com/dev-tips/feedback
 
 #### Create a `.env` file like this:
 
+_Note: To fill in `TWITTER_BEARER_TOKEN`_, run the next step
+
 ```
 TWITTER_CONSUMER_KEY=
 TWITTER_CONSUMER_SECRET=
 TWITTER_BEARER_TOKEN=
 ```
 
-#### Add your IDs to ids.json
+
+#### Get your bearer token:
+
+```sh
+npm start get-bearer-token
+```
+
+#### Add your IDs to ids.json and run
 
 ```sh
 mkdir images
