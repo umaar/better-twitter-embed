@@ -65,7 +65,10 @@ function orderTweets(tweets) {
 	return tweets.sort((a, b) => b.retweet_count - a.retweet_count);
 }
 
+// Use this line for doing the real thing
 // const allIds = require('./ids.json').ids;
+
+// Use this line for testing
 const allIds = require('./ids.json').ids.slice(0, 3);
 
 function unique(arr) {
