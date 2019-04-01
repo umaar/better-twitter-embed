@@ -22,7 +22,6 @@ request.post(oauthOptions, (err, response, body) => {
 		throw new Error(err);
 	}
 
-
 	if (body) {
 		const parsedBody = JSON.parse(body);
 

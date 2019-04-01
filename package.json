@@ -11,9 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^6.2.0",
-    "got": "^9.5.0",
-    "moment": "^2.23.0",
+    "dotenv": "^7.0.0",
+    "got": "^9.6.0",
+    "moment": "^2.24.0",
     "tweet-to-html": "^1.0.2",
     "twitter": "^1.7.1"
   }
