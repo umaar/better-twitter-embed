@@ -1,12 +1,17 @@
-require('dotenv').config();
+import fs from 'fs';
 
-const fs = require('fs');
-const got = require('got');
-const moment = require('moment');
-const Twitter = require('twitter');
-const tweetToHTML = require('tweet-to-html');
+import dotenv from 'dotenv';
+import got from 'got';
+import moment from 'moment';
+import Twitter from 'twitter';
+import tweetToHTML from 'tweet-to-html';
 
-const renderTweet = require('./render-tweet');
+import renderTweet from './render-tweet.js';
+import rawIDs from './ids.json';
+
+const IDs = rawIDs.ids;
+
+dotenv.config();
 
 const client = new Twitter({
 	consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -45,12 +50,12 @@ function createMarkupForTweets(tweets) {
 }
 
 async function downloadAllTweetImages(tweets) {
-	for (tweet of tweets) {
+	for (const tweet of tweets) {
 		const imageUrl = tweet.user.profile_image_url_https;
 		const filePath = './images/' + tweet.user.id + '.jpg';
 
 		const downloadResponse = await got(imageUrl, {
-			encoding: null
+			responseType: 'buffer'
 		});
 
 		fs.writeFileSync(filePath, downloadResponse.body, 'binary');
@@ -65,14 +70,12 @@ function orderTweets(tweets) {
 	return tweets.sort((a, b) => b.retweet_count - a.retweet_count);
 }
 
-// Use this line for doing the real thing
-const allIds = require('./ids.json').ids;
-
 // Use this line for testing
-// const allIds = require('./ids.json').ids.slice(0, 3);
+// console.log(IDs);
+const allIds = IDs.slice(0, 3);
 
-function unique(arr) {
-	return [...new Set(arr)];
+function unique(array) {
+	return [...new Set(array)];
 }
 
 async function init() {

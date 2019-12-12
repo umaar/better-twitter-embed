@@ -46,4 +46,4 @@ function renderTweet({
 `;
 }
 
-module.exports = renderTweet;
+export default renderTweet;

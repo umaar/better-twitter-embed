@@ -1,5 +1,7 @@
 ### Better twitter embed
 
+[![Actions Status](https://github.com/umaar/better-twitter-embed/workflows/Node%20CI/badge.svg)](https://github.com/umaar/better-twitter-embed/actions)
+
 How I get tweets onto https://umaar.com/dev-tips/feedback
 
 #### Create a `.env` file like this:

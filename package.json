@@ -1,20 +1,29 @@
 {
   "name": "better-twitter-embed",
-  "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js > tmp.txt",
+    "test": "xo",
+    "start": "node --experimental-json-modules index.js > tmp.txt",
     "get-bearer-token": "node get-twitter-bearer.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.0.0",
-    "got": "^9.6.0",
+    "dotenv": "^8.2.0",
+    "got": "^10.0.1",
     "moment": "^2.24.0",
+    "request": "^2.88.0",
     "tweet-to-html": "^1.0.2",
     "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "@umaar/personal-eslint-config": "latest",
+    "xo": "^0.25.3"
+  },
+  "xo": {
+    "extends": "./node_modules/@umaar/personal-eslint-config/rules.json"
   }
 }

@@ -1,6 +1,7 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+import request from 'request';
 
-const request = require('request');
+dotenv.config();
 
 const consumerKey = process.env.TWITTER_CONSUMER_KEY;
 const consumerSecret = process.env.TWITTER_CONSUMER_SECRET;
@@ -16,10 +17,10 @@ const oauthOptions = {
 	body: 'grant_type=client_credentials'
 };
 
-request.post(oauthOptions, (err, response, body) => {
-	if (err) {
+request.post(oauthOptions, (error, response, body) => {
+	if (error) {
 		console.log('Error in fetching bearer token');
-		throw new Error(err);
+		throw new Error(error);
 	}
 
 	if (body) {
