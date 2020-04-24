@@ -14,18 +14,23 @@ TWITTER_CONSUMER_SECRET=
 TWITTER_BEARER_TOKEN=
 ```
 
+#### Install deps:
+
+```sh
+npm i
+```
 
 #### Get your bearer token:
 
 ```sh
-npm start get-bearer-token
+make get-bearer-token
 ```
 
 #### Add your IDs to ids.json and run
 
 ```sh
 mkdir images
-npm start
+make start
 ```
 
 #### Sprite Generation
@@ -55,3 +60,10 @@ Take the CSS from spritegen and paste it into dev-tips.scss. Find `'jpeg.jpg'` a
 ### Twitter API
 
 https://api.twitter.com/1.1/statuses/lookup.json?id=20,432656548536401920
+
+
+#### Run tests:
+
+```sh
+make test
+```
