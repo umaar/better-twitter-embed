@@ -35,11 +35,11 @@ make start
 
 #### Sprite Generation
 
-Generate sprites of all images in `./images`. Save the output image to `/assets/images/twitter-profile-pics.jpg`. Make sure to chose jpeg and lower the quality a bit. Use this for the class prefix: `dt-fb-pic-`. The URL to accomplish this is here:
+Generate sprites of all images in `./images`. Save the output image to `/assets/images/twitter-profile-pics.png`.
 
-```
-http://css.spritegen.com/
-```
+For the class prefixes, use: `dt-fb-sprite` & `dt-fb-pic-`
+
+The sprite generator is here: https://instantsprite.com/ / Forked at https://github.com/umaar/InstantSprite
 
 #### Copy markup
 
@@ -47,7 +47,7 @@ Copy the markup from tmp.txt and paste it into `umaar/app/dev-tips/main/tweets`
 
 #### Copy CSS
 
-Take the CSS from spritegen and paste it into dev-tips.scss. Find `'jpeg.jpg'` and replace it with `/assets/images/twitter-profile-pics.jpg`.
+Take the CSS from instantsprite and paste it into dev-tips.scss. Find `'*.png'` and replace it with `/assets/images/twitter-profile-pics.png`.
 
 ##### Get all twitter IDs from page
 

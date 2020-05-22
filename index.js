@@ -71,8 +71,8 @@ function orderTweets(tweets) {
 }
 
 // Use this line for testing
-// console.log(IDs);
 const allIds = IDs.slice(0, 3);
+// const allIds = IDs;
 
 function unique(array) {
 	return [...new Set(array)];

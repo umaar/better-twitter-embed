@@ -14,7 +14,7 @@ function renderTweet({
 <li class="dt-fb-tweet">
 	<header>
 		<a target="_blank" href="${profileUrl}">
-			<div class="dt-fb-pic-${userId}"></div>
+			<div class="dt-fb-sprite dt-fb-pic-${userId}"></div>
 		</a>
 
 		<a class="dt-fb-name" target="_blank" href="${profileUrl}">
