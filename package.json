@@ -7,7 +7,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "got": "^11.8.0",
+    "got": "^11.8.2",
     "moment": "^2.29.1",
     "request": "^2.88.2",
     "tweet-to-html": "^1.1.0",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@umaar/personal-eslint-config": "latest",
-    "xo": "^0.34.2"
+    "xo": "^0.39.1"
   },
   "xo": {
     "extends": "./node_modules/@umaar/personal-eslint-config/rules.json"
