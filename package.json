@@ -6,16 +6,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "got": "^11.8.2",
-    "moment": "^2.29.1",
+    "dotenv": "^16.0.1",
+    "got": "^12.3.1",
+    "moment": "^2.29.4",
     "request": "^2.88.2",
-    "tweet-to-html": "^1.1.0",
+    "tweet-to-html": "^2.0.0",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
     "@umaar/personal-eslint-config": "latest",
-    "xo": "^0.39.1"
+    "xo": "^0.51.0"
   },
   "xo": {
     "extends": "./node_modules/@umaar/personal-eslint-config/rules.json"

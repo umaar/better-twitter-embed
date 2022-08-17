@@ -44,8 +44,7 @@ The sprite generator is here: https://instantsprite.com/ / Forked at https://git
 - Can use horizontal direction
 - 0px offet
 - instantsprite exports as a png, so open with preview and export to .jpg with a lower quality
-- 
-
+-
 
 #### Copy markup
 
@@ -53,20 +52,19 @@ Copy the markup from tmp.txt and paste it into `umaar/app/dev-tips/main/tweets`
 
 #### Copy CSS
 
-Take the CSS from instantsprite and paste it into dev-tips.scss. Find `'*.jpg'` and replace it with `/assets/images/twitter-profile-pics.jpg`.
+Take the CSS from instantsprite and paste it into dev-tips-feedback.scss. Find `'*.jpg'` and replace it with `/assets/images/twitter-profile-pics.jpg`.
 
 ##### Get all twitter IDs from page
 
 ```js
-[...document.querySelectorAll('blockquote')].map(b => {
-  return [...b.querySelectorAll('a')].reverse()[0].href.split('status/')[1];
-})
+[...document.querySelectorAll("blockquote")].map((b) => {
+  return [...b.querySelectorAll("a")].reverse()[0].href.split("status/")[1];
+});
 ```
 
 ### Twitter API
 
 https://api.twitter.com/1.1/statuses/lookup.json?id=20,432656548536401920
-
 
 #### Run tests:
 
