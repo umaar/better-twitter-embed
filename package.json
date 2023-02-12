@@ -7,7 +7,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "got": "^12.3.1",
+    "got": "^12.5.3",
     "moment": "^2.29.4",
     "request": "^2.88.2",
     "tweet-to-html": "^2.0.0",
